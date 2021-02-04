@@ -12,8 +12,29 @@
 	<br>
 
 	<p>
-		Halaman Index Controller Home
+		Halaman Index
 	</p>
+
+	<br>
+
+	<a href="/create">
+		Create Data
+	</a>
+
+	<br>
+
+	<table border="2">
+		<tr>
+			<th>Nama</th>
+			<th>Asal</th>
+		</tr>
+		@foreach($Laraples as $dt)
+		<tr>
+			<td>{{ $dt->nama }}</td>
+			<td>{{ $dt->asal }}</td>
+		</tr>
+		@endforeach
+	</table>
 
 </body>
 </html>
