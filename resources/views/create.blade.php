@@ -11,7 +11,7 @@
 
 	<form method="POST" action="/input">
 
-		@csrf
+		{{csrf_field()}}
 
 		Nama <input type="text" name="nama" required>
 		<br><br>

@@ -27,11 +27,20 @@
 		<tr>
 			<th>Nama</th>
 			<th>Asal</th>
+			<th>Aksi</th>
 		</tr>
 		@foreach($Laraples as $dt)
 		<tr>
 			<td>{{ $dt->nama }}</td>
 			<td>{{ $dt->asal }}</td>
+			<td>
+				<a href="/delete/{{$dt->id}}">
+					delete
+				</a>
+				<a href="/edit/{{$dt->id}}">
+					edit
+				</a>
+			</td>
 		</tr>
 		@endforeach
 	</table>

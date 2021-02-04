@@ -1,3 +1,3 @@
 git add .
-git commit -m "update"
+git commit -m "CRUD SELESAI"
 git push -u laraple main
