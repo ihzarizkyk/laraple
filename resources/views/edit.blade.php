@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<title>Update Data - Belajar Laravel</title>
 </head>
 <body>
+
+<div class="container">
 
 <h2>
 	Update Data - Belajar Laravel 2021
@@ -12,15 +15,26 @@
 @foreach($Laraples as $data)
 <form action="/update" method="POST">
 	{{csrf_field()}}
-	<input type="hidden" name="id" value="{{$data->id}}">
+<div class="form-group">
+	<input type="hidden" name="id" value="{{$data->id}}" class="form-control">
 	<br>
-	Nama <input type="text" name="nama" value="{{$data->nama}}">
+	<label for="Nama">Nama</label> 
+	<input type="text" name="nama" value="{{$data->nama}}" class="form-control">
+	<br>
+</div>
+
+<div class="form-group">
+	<label for="Asal">Asal</label> 
+	<input type="text" name="asal" value="{{$data->asal}}" class="form-control">
 	<br><br>
-	Asal <input type="text" name="asal" value="{{$data->asal}}">
-	<br><br>
-	<input type="submit" name="update" value="update">
+</div>
+
+<input type="submit" name="update" value="update" class="btn btn-primary">	
+
 </form>
-@endforeach
+@endforeach	
+
+</div>
 
 </body>
 </html>

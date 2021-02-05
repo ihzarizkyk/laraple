@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<title>Create Data - Belajar Laravel</title>
 </head>
 <body>
 
+<div class="container">
 	<h2>
 		Create Data
 	</h2>
 
+	<a href="/home" class="btn btn-danger btn-sm mt-3 mb-3">
+		Kembali
+	</a>
+
 	<form method="POST" action="/input">
 
 		{{csrf_field()}}
-
-		Nama <input type="text" name="nama">
+	<div class="form-group">
+		<label for="nama">Nama </label>
+		<input type="text" name="nama" class="form-control">
 		<br>
 		<!--tampilkan pesan error disini-->
 		@error('nama')
-		{{$message}}
-		@enderror	
-		<br><br>
-
-		Asal <input type="text" name="asal">
+		<p class="text-danger">{{$message}}</p>
+		@enderror			
+	</div>
+	<div class="form-group">
+		<label for="Asal">Asal</label> 
+		<input type="text" name="asal" class="form-control">
 		<br>
 		<!--tampilkan pesan error disini-->
 		@error('asal')
-		{{$message}}
-		@enderror
-		<br><br>
+		<p class="text-danger">{{$message}}</p>
+		@enderror	
+	</div>
 		
-		<input type="submit" name="input">
+		<input type="submit" name="input" class="btn btn-success">
 	</form>
+</div>
 
 </body>
 </html>
