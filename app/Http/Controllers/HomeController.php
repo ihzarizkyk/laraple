@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class HomeController extends Controller
 {
 
@@ -22,9 +23,17 @@ class HomeController extends Controller
     	return view("create");
     }
 
-    // inser data
+    // insert data
     public function input(Request $request)
     {
+
+        // Validasi Dulu
+        // syarat | syarat | syarat
+        $this->validate($request,[
+            "nama" => "required|min:15|max:45",
+            "asal" => "required|min:3|max:20"]);
+
+        // Masukkan Data
     	DB::table("Laraples")->insert([
     		"nama" => $request->nama,
     		"asal" => $request->asal

@@ -13,10 +13,22 @@
 
 		{{csrf_field()}}
 
-		Nama <input type="text" name="nama" required>
+		Nama <input type="text" name="nama">
+		<br>
+		<!--tampilkan pesan error disini-->
+		@error('nama')
+		{{$message}}
+		@enderror	
 		<br><br>
-		Asal <input type="text" name="asal" required>
+
+		Asal <input type="text" name="asal">
+		<br>
+		<!--tampilkan pesan error disini-->
+		@error('asal')
+		{{$message}}
+		@enderror
 		<br><br>
+		
 		<input type="submit" name="input">
 	</form>
 
