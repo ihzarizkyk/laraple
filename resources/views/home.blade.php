@@ -14,7 +14,7 @@
 	<br>
 
 	<p>
-		Halaman Index
+		Halaman Home - Index
 	</p>
 
 	<br>

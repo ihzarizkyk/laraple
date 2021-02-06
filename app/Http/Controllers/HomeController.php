@@ -30,7 +30,7 @@ class HomeController extends Controller
         // Validasi Dulu
         // syarat | syarat | syarat
         $request->validate([
-        "gambar"=> "required|mimes:jpg,jpeg,png,svg|max:1024",
+        "gambar"=> "required|mimes:jpg,jpeg,png|max:1024",
         "nama"=> "required|min:5|max:45",
         "asal"=> "required|min:3|max:20"]);
 
