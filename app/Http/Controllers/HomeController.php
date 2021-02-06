@@ -13,8 +13,8 @@ class HomeController extends Controller
 
     public function index()
     {
-    	$data = DB::table("Laraples")->get();
-    	return view("home",["Laraples" => $data]);
+    	$data = DB::table("_laraples")->get();
+    	return view("home",["_laraples" => $data]);
     }
 
     // View Create Data
@@ -29,12 +29,18 @@ class HomeController extends Controller
 
         // Validasi Dulu
         // syarat | syarat | syarat
-        $this->validate($request,[
-            "nama" => "required|min:15|max:45",
-            "asal" => "required|min:3|max:20"]);
+        $request->validate([
+        "gambar"=> "required|mimes:jpg,jpeg,png,svg|max:1024",
+        "nama"=> "required|min:5|max:45",
+        "asal"=> "required|min:3|max:20"]);
+
+        $namagmbr = $request->gambar->getClientOriginalName()."-".time();
+
+        $request->gambar->move(public_path("gambar"),$namagmbr);
 
         // Masukkan Data
-    	DB::table("Laraples")->insert([
+    	DB::table("_laraples")->insert([
+            "gambar" => $namagmbr,
     		"nama" => $request->nama,
     		"asal" => $request->asal
     	]);
@@ -45,7 +51,7 @@ class HomeController extends Controller
     // Delete data
     public function delete($id)
     {
-        DB::table("Laraples")->where("id",$id)->delete();
+        DB::table("_laraples")->where("id",$id)->delete();
 
         return redirect("/home");
     }
@@ -53,14 +59,14 @@ class HomeController extends Controller
     // Edit data
     public function edit($id)
     {
-        $data = DB::table("Laraples")->where("id",$id)->get();
-        return view("edit",["Laraples" => $data]);
+        $data = DB::table("_laraples")->where("id",$id)->get();
+        return view("edit",["_laraples" => $data]);
     }
 
     // Update Data
     public function update(Request $request)
     {
-        DB::table("Laraples")->where("id",$request->id)->update([
+        DB::table("_laraples")->where("id",$request->id)->update([
             "nama" => $request->nama,
             "asal" => $request->asal
             ]);

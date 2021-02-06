@@ -15,6 +15,7 @@ class CreateLaraplesTable extends Migration
     {
         Schema::create('_laraples', function (Blueprint $table) {
             $table->id();
+            $table->string("gambar",100);
             $table->string("nama",50);
             $table->string("asal",50);
         });

@@ -28,6 +28,7 @@
 	<table class="table" border="2">
 	<thead class="thead-dark">
 		<tr>
+			<th scope="col">Gambar</th>
 			<th scope="col">Nama</th>
 			<th scope="col">Asal</th>
 			<th scope="col">Aksi</th>
@@ -35,8 +36,9 @@
 	</thead>
 
 	<tbody>
-		@foreach($Laraples as $dt)
+		@foreach($_laraples as $dt)
 		<tr>
+			<td><img src="gambar/{{$dt->gambar}}" height="200"></td>
 			<td>{{ $dt->nama }}</td>
 			<td>{{ $dt->asal }}</td>
 			<td>

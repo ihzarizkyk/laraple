@@ -12,7 +12,7 @@
 	Update Data - Belajar Laravel 2021
 </h2>
 
-@foreach($Laraples as $data)
+@foreach($_laraples as $data)
 <form action="/update" method="POST">
 	{{csrf_field()}}
 <div class="form-group">

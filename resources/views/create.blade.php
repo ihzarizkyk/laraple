@@ -15,9 +15,21 @@
 		Kembali
 	</a>
 
-	<form method="POST" action="/input">
+	<form method="POST" action="/input" enctype="multipart/form-data">
 
 		{{csrf_field()}}
+	<div class="form-group">
+		<label for="gambar">
+			Gambar
+		</label>
+		<br>
+		<input type="file" name="gambar" class="form-control-file">
+	<br>
+		@error('gambar')
+		<p class="text-danger">{{$message}}</p>
+		@enderror
+	</div>
+
 	<div class="form-group">
 		<label for="nama">Nama </label>
 		<input type="text" name="nama" class="form-control">
@@ -27,6 +39,8 @@
 		<p class="text-danger">{{$message}}</p>
 		@enderror			
 	</div>
+
+	
 	<div class="form-group">
 		<label for="Asal">Asal</label> 
 		<input type="text" name="asal" class="form-control">
