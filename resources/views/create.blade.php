@@ -8,7 +8,7 @@
 
 <div class="container">
 	<h2>
-		Create Data - Belajar Laravel 8
+		Create Data - Belajar Laravel 8 2021
 	</h2>
 
 	<a href="/home" class="btn btn-danger btn-sm mt-3 mb-3">

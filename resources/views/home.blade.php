@@ -8,7 +8,7 @@
 
 <div class="container">
 	<h1>
-		Home - Belajar Laravel 2021
+		Belajar Laravel 2021
 	</h1>
 
 	<br>

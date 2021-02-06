@@ -31,10 +31,10 @@ class HomeController extends Controller
         // syarat | syarat | syarat
         $request->validate([
         "gambar"=> "required|mimes:jpg,jpeg,png|max:1024",
-        "nama"=> "required|min:5|max:45",
+        "nama"=> "required|min:5|max:40",
         "asal"=> "required|min:3|max:20"]);
 
-        $namagmbr = $request->gambar->getClientOriginalName()."-".time();
+        $namagmbr = $request->gambar->getClientOriginalName();
 
         $request->gambar->move(public_path("gambar"),$namagmbr);
 

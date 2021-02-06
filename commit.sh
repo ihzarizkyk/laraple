@@ -1,3 +1,3 @@
 git add .
-git commit -m "Integrasi Bootstrap 4"
+git commit -m "Upload Gambar"
 git push -u laraple main
