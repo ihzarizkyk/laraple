@@ -1,3 +1,3 @@
 git add .
-git commit -m "Ubah nama method controller dan route input -> store"
+git commit -m "Update"
 git push -u laraple main
