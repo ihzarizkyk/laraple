@@ -15,7 +15,7 @@
 		Kembali
 	</a>
 
-	<form method="POST" action="/input" enctype="multipart/form-data">
+	<form method="POST" action="/store" enctype="multipart/form-data">
 
 		{{csrf_field()}}
 	<div class="form-group">

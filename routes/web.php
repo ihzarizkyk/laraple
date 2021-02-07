@@ -8,7 +8,7 @@ Route::get('/', function () {
 
 Route::get('/home',"HomeController@index");
 Route::get('/create',"HomeController@create");
-Route::post('/input',"HomeController@input");
+Route::post('/store',"HomeController@store");
 Route::get('/delete/{id}',"HomeController@delete");
 Route::get('/edit/{id}',"HomeController@edit");
 Route::post('/update',"HomeController@update");

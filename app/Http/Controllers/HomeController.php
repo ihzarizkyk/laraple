@@ -24,7 +24,7 @@ class HomeController extends Controller
     }
 
     // insert data
-    public function input(Request $request)
+    public function store(Request $request)
     {
 
         // Validasi Dulu
