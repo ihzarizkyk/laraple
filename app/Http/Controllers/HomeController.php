@@ -14,7 +14,13 @@ class HomeController extends Controller
     public function index()
     {
     	$data = DB::table("_laraples")->get();
-    	return view("home",["_laraples" => $data]);
+        if($data->count() > 0)
+        {
+         return view("home",["_laraples" => $data]);    
+        }else{
+            abort(404);
+        }
+    	
     }
 
     // View Create Data
@@ -34,7 +40,7 @@ class HomeController extends Controller
         "nama"=> "required|min:5|max:40",
         "asal"=> "required|min:3|max:20"]);
 
-        $namagmbr = $request->gambar->getClientOriginalName();
+        $namagmbr = $request->file('gambar')->getClientOriginalName();
 
         $request->gambar->move(public_path("gambar"),$namagmbr);
 
