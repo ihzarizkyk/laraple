@@ -1,3 +1,3 @@
 git add .
-git commit -m "Abort Page"
+git commit -m "Add Slug"
 git push -u laraple main

@@ -17,6 +17,7 @@ class CreateLaraplesTable extends Migration
             $table->id();
             $table->string("gambar",100);
             $table->string("nama",50);
+            $table->string("slug",50);
             $table->string("asal",50);
         });
     }

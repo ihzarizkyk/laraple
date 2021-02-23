@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 
 class HomeController extends Controller
@@ -48,6 +49,7 @@ class HomeController extends Controller
     	DB::table("_laraples")->insert([
             "gambar" => $namagmbr,
     		"nama" => $request->nama,
+            "slug" => Str::slug($request->nama,"-"),
     		"asal" => $request->asal
     	]);
 
@@ -78,6 +80,12 @@ class HomeController extends Controller
             ]);
 
         return redirect("/home");
+    }
+
+    public function show($slug)
+    {
+        $data = DB::table("_laraples")->where("slug",$slug)->get();
+        return view("show",["data" => $data]);
     }
 
 }

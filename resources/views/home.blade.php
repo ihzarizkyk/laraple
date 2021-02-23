@@ -48,6 +48,9 @@
 				<a href="/edit/{{$dt->id}}" class="btn btn-dark btn-sm">
 					edit
 				</a>
+				<a href="/show/{{$dt->slug}}" class="btn btn-secondary btn-sm">
+					view
+				</a>
 			</td>
 		</tr>
 		@endforeach
