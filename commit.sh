@@ -1,3 +1,3 @@
 git add .
-git commit -m "Add Carbon Package"
+git commit -m "Seeding _laraples table"
 git push -u laraple main
