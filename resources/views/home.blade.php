@@ -56,7 +56,20 @@
 		@endforeach
 	</tbody>
 
-	</table>	
+	</table>
+
+	<h2>
+		Random Order Results:
+	</h2>
+
+	<br>
+
+	<ol>
+		@foreach($random as $rd)
+		<li>{{$rd->nama}} || {{$rd->asal}}</li>
+		@endforeach
+	</ol>
+
 </div>
 
 </body>

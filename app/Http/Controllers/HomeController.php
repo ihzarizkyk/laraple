@@ -16,9 +16,10 @@ class HomeController extends Controller
     public function index()
     {
     	$data = DB::table("_laraples")->get();
+        $randomdata = DB::table("_laraples")->inRandomOrder()->get();
         if($data->count() > 0)
         {
-         return view("home",["_laraples" => $data]);    
+         return view("home",["_laraples" => $data,"random" => $randomdata]);    
         }else{
             abort(404);
         }

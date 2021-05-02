@@ -1,3 +1,3 @@
 git add .
-git commit -m "Seeding _laraples table"
+git commit -m "Random Order"
 git push -u laraple main
