@@ -16,3 +16,4 @@ Route::get("/register","AuthController@register");
 Route::get("/login","AuthController@login");
 Route::post("/postregister","AuthController@postregister");
 Route::post("/postlogin","AuthController@postlogin");
+Route::get("/logout","AuthController@logout");
