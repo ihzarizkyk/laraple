@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use App\Models\Laraple;
 
 
 class HomeController extends Controller
@@ -15,7 +16,7 @@ class HomeController extends Controller
 
     public function index()
     {
-    	$data = DB::table("_laraples")->get();
+    	$data = Laraple::get();
         $randomdata = DB::table("_laraples")->inRandomOrder()->get();
         if($data->count() > 0)
         {
@@ -55,15 +56,16 @@ class HomeController extends Controller
     		"asal" => $request->asal
     	]);
 
-    	return redirect("/home");
+    	return redirect("/");
     }
 
     // Delete data
     public function delete($id)
     {
-        DB::table("_laraples")->where("id",$id)->delete();
+        $data = Laraple::find($id);
+        $data->delete();
 
-        return redirect("/home");
+        return redirect("/");
     }
 
     // Edit data
@@ -81,13 +83,13 @@ class HomeController extends Controller
             "asal" => $request->asal
             ]);
 
-        return redirect("/home");
+        return redirect("/");
     }
 
     public function show($slug)
     {
-        $data = DB::table("_laraples")->where("slug",$slug)->get();
-        return view("show",["data" => $data]);
+        $data = Laraple::find($slug);
+        return view("show",["records" => $data]);
     }
 
 }

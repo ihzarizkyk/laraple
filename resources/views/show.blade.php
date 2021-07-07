@@ -5,9 +5,9 @@
 </head>
 <body>
 
-	@foreach($data as $dt)
-	<h1>{{$dt->nama}}</h1>
-	<h4>{{$dt->slug}}</h4>
+	@foreach($records as $data)
+	<h1>{{$data->name}}</h1>
+	<h4>{{$data->slug}}</h4>
 	@endforeach
 
 </body>

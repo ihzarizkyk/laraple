@@ -9,5 +9,5 @@ class Laraple extends Model
 {
     use HasFactory;
 
-    private $table = "Laraples";
+    protected $table = "_laraples";
 }
