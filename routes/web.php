@@ -6,7 +6,7 @@ Route::get('/',"HomeController@index");
 Route::get('/create',"HomeController@create");
 Route::post('/store',"HomeController@store");
 Route::get('/delete/{id}',"HomeController@delete");
-Route::get('/edit/{id}',"HomeController@edit");
+Route::get('/edit/{laraple:slug}',"HomeController@edit");
 Route::post('/update',"HomeController@update");
 Route::get('/show/{slug}',"HomeController@show");
 

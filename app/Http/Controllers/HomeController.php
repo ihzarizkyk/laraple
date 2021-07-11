@@ -9,18 +9,20 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 use App\Models\Laraple;
-
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
 
     public function index()
     {
-    	$data = Laraple::get();
+        $relation = Laraple::all();
+        $hasMany = Auth::user()->articles()->get();
         $randomdata = DB::table("_laraples")->inRandomOrder()->get();
-        if($data->count() > 0)
+        if($relation->count() > 0)
         {
-         return view("home",["_laraples" => $data,"random" => $randomdata]);    
+         return view("home",["_laraples" => $relation,"random" => $randomdata,"articles" => $hasMany]);    
         }else{
             abort(404);
         }
@@ -60,18 +62,20 @@ class HomeController extends Controller
     }
 
     // Delete data
-    public function delete($id)
+    public function delete(Laraple $laraple)
     {
-        $data = Laraple::find($id);
+        $this->authorize("del",$laraple);
+        $data = Laraple::find($laraple->id);
         $data->delete();
 
         return redirect("/");
     }
 
     // Edit data
-    public function edit($id)
+    public function edit(Laraple $laraple)
     {
-        $data = DB::table("_laraples")->where("id",$id)->get();
+        $this->authorize("v_edit",$laraple);
+        $data = DB::table("_laraples")->where("slug",$laraple->slug)->get();
         return view("edit",["_laraples" => $data]);
     }
 
